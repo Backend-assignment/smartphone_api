@@ -47,7 +47,6 @@ Brand
 | address | varchar(255) | Address |
 | website | varchar(255) | Website |
 
-
 ## API endpoints
 
 | Method | Endpoint | Description |
@@ -103,5 +102,246 @@ API response:
     
     
     ]
+}
+```
+
+Get brand by id
+
+This endpoint returns a brand by id.
+
+API request:
+
+```bash
+curl -X GET "http://localhost:8000/api/brands/1" -H "accept: application/json"
+```
+
+API response:
+
+```bash
+{
+    "id":1,
+    "name":"Apple",
+    "created_at":"2020-05-01T12:00:00.000000Z",
+    "updated_at":"2020-05-01T12:00:00.000000Z",
+    "email":"example@gmail.com",
+    "phone":"123456789",
+    "address":"Apple street",
+    "website":"www.apple.com"
+}
+```
+
+Create a new brand
+
+This endpoint creates a new brand.
+
+API request:
+
+```bash
+curl -X POST "http://localhost:8000/api/brands" -H "accept: application/json" -H "Content-Type: application/json" -d "{ \"name\": \"Apple\", \"email\": \"
+```
+
+API response:
+
+```bash
+{
+{
+    "id":1,
+    "name":"Apple",
+    "created_at":"2020-05-01T12:00:00.000000Z",
+    "updated_at":"2020-05-01T12:00:00.000000Z",
+    "email":"example@gmail.com",
+    "phone":"123456789",
+    "address":"Apple street",
+    "website":"www.apple.com"
+}
+```
+
+Update a brand by id
+
+This endpoint updates a brand by id.
+
+API request:
+
+```bash
+curl -X POST "http://localhost:8000/api/update/brands/1" -H "accept: application/json" -H "Content-Type: application/json" -d "{ \"name\": \"Apple\", \"email\": \"
+```
+
+API response:
+
+```bash
+{
+    "id":1,
+    "name":"Apple",
+    "created_at":"2020-05-01T12:00:00.000000Z",
+    "updated_at":"2020-05-01T12:00:00.000000Z",
+    "email":"example@gmail.com",
+    "phone":"123456789",
+    "address":"Apple street",
+    "website":"www.apple.com"
+}
+```
+
+Delete a brand by id
+
+This endpoint deletes a brand by id.
+
+API request:
+
+```bash
+curl -X DELETE "http://localhost:8000/api/delete/brands/1" -H "accept: application/json"
+```
+
+API response:
+
+```bash
+{
+    "message":"Brand deleted successfully"
+}
+```
+
+Get all smartphones
+
+This endpoint returns all smartphones.
+
+API request:
+
+```bash
+curl -X GET "http://localhost:8000/api/smartphones" -H "accept: application/json"
+```
+
+API response:
+
+```bash
+{
+    "smartphones":[
+        {
+            "id":1,
+            "name":"Apple",
+            "created_at":"2020-05-01T12:00:00.000000Z",
+            "updated_at":"2020-05-01T12:00:00.000000Z",
+            "brand_id":1,
+            "model":"iPhone 11",
+            "price":"1000.00",
+            "memory":"64GB",
+            "color":"Black",
+            "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nisl eget ultricies lacinia, nisl nunc aliquet nunc, ege
+            "image":"https://www.apple.com/v/iphone/home/ab/images/overview/compare/compare_iphone_11__f2x2.jpg"
+        },
+        {
+            "id":2,
+            "name":"Samsung",
+            "created_at":"2020-05-01T12:00:00.000000Z",
+            "updated_at":"2020-05-01T12:00:00.000000Z",
+            "brand_id":2,
+            "model":"Galaxy S20",
+            "price":"1000.00",
+            "memory":"64GB",
+            "color":"Black",
+            "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nisl eget ultricies lacinia, nisl nunc aliquet nunc, ege
+            "image":"https://www.samsung.com/global/galaxy/galaxy-s20/images/galaxy-s20/compare/galaxy-s20_compare_01.jpg"
+        }
+    ]
+}
+```
+
+Get smartphone by id
+
+This endpoint returns a smartphone by id.
+
+API request:
+
+```bash
+curl -X GET "http://localhost:8000/api/smartphones/1" -H "accept: application/json"
+```
+
+API response:
+
+```bash
+{
+    "id":1,
+    "name":"Apple",
+    "created_at":"2020-05-01T12:00:00.000000Z",
+    "updated_at":"2020-05-01T12:00:00.000000Z",
+    "brand_id":1,
+    "model":"iPhone 11",
+    "price":"1000.00",
+    "memory":"64GB",
+    "color":"Black",
+    "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nisl eget ultricies lacinia, nisl nunc aliquet nunc, ege
+    "image":"https://www.apple.com/v/iphone/home/ab/images/overview/compare/compare_iphone_11__f2x2.jpg"
+}
+```
+
+Create a new smartphone
+
+This endpoint creates a new smartphone.
+
+API request:
+
+```bash
+curl -X POST "http://localhost:8000/api/smartphones" -H "accept: application/json" -H "Content-Type: application/json" -d "{ \"name\": \"Apple\", \"email\": \"
+```
+
+API response:
+
+```bash
+{
+    "id":1,
+    "name":"Apple",
+    "created_at":"2020-05-01T12:00:00.000000Z",
+    "updated_at":"2020-05-01T12:00:00.000000Z",
+    "brand_id":1,
+    "model":"iPhone 11",
+    "price":"1000.00",
+    "memory":"64GB",
+    "color":"Black",
+    "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nisl eget ultricies lacinia, nisl nunc aliquet nunc, ege
+    "image":"https://www.apple.com/v/iphone/home/ab/images/overview/compare/compare_iphone_11__f2x2.jpg"
+}
+```
+
+Update a smartphone by id
+
+This endpoint updates a smartphone by id.
+
+API request:
+
+```bash
+curl -X POST "http://localhost:8000/api/update/smartphones/1" -H "accept: application/json" -H "Content-Type: application/json" -d "{ \"name\": \"Apple\", \"email\": \"
+```
+
+API response:
+
+```bash
+{
+    "id":1,
+    "name":"Apple",
+    "created_at":"2020-05-01T12:00:00.000000Z",
+    "updated_at":"2020-05-01T12:00:00.000000Z",
+    "brand_id":1,
+    "model":"iPhone 11",
+    "price":"1000.00",
+    "memory":"64GB",
+    "color":"Black",
+    "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nisl eget ultricies lacinia, nisl nunc aliquet nunc, ege
+    "image":"https://www.apple.com/v/iphone/home/ab/images/overview/compare/compare_iphone_11__f2x2.jpg"
+}
+```
+
+Delete a smartphone by id
+
+This endpoint deletes a smartphone by id.
+
+API request:
+
+```bash
+curl -X DELETE "http://localhost:8000/api/delete/smartphones/1" -H "accept: application/json"
+```
+
+API response:
+
+```bash
+{
+    "message":"Smartphone deleted successfully"
 }
 ```
